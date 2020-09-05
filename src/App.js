@@ -26,8 +26,8 @@ class App extends React.Component {
         <Formik
           initialValues={{
             situation: '',
-            lastName: '',
-            email: '',
+            date: '',
+            beginning: '',
           }}
           onSubmit={(
             values: Values,
