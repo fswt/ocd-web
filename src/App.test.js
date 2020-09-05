@@ -1,40 +1,10 @@
 import React from 'react';
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { render, screen } from '@testing-library/react';
+import InputForm from './InputForm';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/ /i);
-  expect(linkElement).toBeInTheDocument();
-});
-
-let container = null;
-beforeEach(() => {
-  // setup a DOM element as a render target
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  // cleanup on exiting
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
-
-it("renders", () => {
-  act(() => {
-    render(<Hello />, container);
+describe('The input form', () => {
+  it("renders the heading", () => {
+    render(<InputForm/>);
+    expect(screen.getByText('Protokoll für die Exposition mit Reaktionsverhinderung')).toBeInTheDocument();
   });
-  expect(container.textContent).toBe("");
-
-  act(() => {
-    render(<Hello name="Jenny" />, container);
-  });
-  expect(container.textContent).toBe("");
-
-  act(() => {
-    render(<Hello name="Margaret" />, container);
-  });
-  expect(container.textContent).toBe("");
 });
