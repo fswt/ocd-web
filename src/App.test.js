@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import InputForm from './InputForm';
+import App from './App';
 
-describe('The input form', () => {
-  it("renders the heading", () => {
-    render(<InputForm/>);
-    expect(screen.getByText('Protokoll für die Exposition mit Reaktionsverhinderung')).toBeInTheDocument();
+describe('The app', () => {
+  it("renders the first protocol", () => {
+    render(<App />);
+    expect(screen.getAllByText('Protokoll für die Exposition mit Reaktionsverhinderung').length).toBe(2)
   });
 });

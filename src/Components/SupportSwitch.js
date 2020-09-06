@@ -3,7 +3,7 @@ import ToggleButton from '@material-ui/lab/ToggleButton'; // TODO: lab only - se
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import TextField from "@material-ui/core/TextField";
 
-export const SupportToggle = props => {
+export const SupportSwitch = props => {
 
     const [support, setSupport] = React.useState('supported');
 
