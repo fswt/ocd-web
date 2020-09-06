@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import { SupportToggle } from "../Components/SupportSwitch";
+import { SupportSwitch } from "../Components/SupportSwitch";
 import { TimeFearSlider } from "../Components/TimeFearSlider";
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -34,7 +34,7 @@ export const Form = props => {
         }}
       >
 
-        <SupportToggle touched errors supportedBy change={change}/>
+        <SupportSwitch touched errors supportedBy change={change}/>
         <div>
           Beschreibung der Auslösesituation
         </div>
@@ -45,9 +45,8 @@ export const Form = props => {
         </div>
         <TextareaAutosize aria-label="compulsions to prevent" rowsMin={5} placeholder="Hinlegen und aufheben des Messers"/>
         
-        {[...Array(10)].map((e, i) => <TimeFearSlider time />)}
+        {[...Array(10)].map((e, i) => <TimeFearSlider time key={i}/>)}
 
-        
         <TextField
                 id="overallDuration"
                 name="overallDuration"
