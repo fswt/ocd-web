@@ -1,9 +1,5 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Slider from '@material-ui/core/Slider';
-import ToggleButton from '@material-ui/lab/ToggleButton'; // TODO: lab only - secure?
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
 function valuetext(value) { //TODO: why?
   return `${value}`;
