@@ -1,9 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Slider from '@material-ui/core/Slider';
-import ToggleButton from '@material-ui/lab/ToggleButton'; // TODO: lab only - secure?
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import { SituationFearSlider } from "../Components/SituationFearSlider";
 
 function valuetext(value) { //TODO: why?
   return `${value}`;
@@ -11,7 +8,7 @@ function valuetext(value) { //TODO: why?
 
 export const Form = props => {
     const {
-      values: { supportedBy, email, password, confirmPassword },
+      values: { situation },
       errors,
       touched,
       handleChange,
@@ -36,7 +33,13 @@ export const Form = props => {
           alert("submitted");
         }}
       >
+        <div>
+          Construct a staircase with situations you tend to avoid because of fear or anxiety, with most-feared at the top and least-feared items at the bottom. Rate each item according to how distressed you would feel if you encountered that situation, on a scale from 0 to 10 (0 = not at all distressed and 10 = extremely distressed).
+        </div>
 
+        <div>Least Feared Situation</div>
+        {[...Array(10)].map((e, i) => <SituationFearSlider situation key={i}/>)}
+        <div>Most Feared Situation</div>
         <Button
           type="submit"
           fullWidth
