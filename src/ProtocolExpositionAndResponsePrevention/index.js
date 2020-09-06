@@ -18,7 +18,7 @@ const styles = theme => ({
  }
 });
 
-class InputForm extends Component {
+class ProtocolExpositionAndResponsePrevention extends Component {
  constructor(props) {
    super(props);
    this.state = {};
@@ -48,14 +48,6 @@ class InputForm extends Component {
 const validationSchema = Yup.object({
     supportedBy: Yup.string("Enter a name")
     .required("Name der begleitenden Person wird benötigt"),
-    email: Yup.string("Enter your email")
-    .email("Enter a valid email")
-    .required("Email is required"),
-    password: Yup.string("")
-    .min(8, "Password must contain at least 8 characters")
-    .required("Enter your password"),
-    confirmPassword: Yup.string("Enter your password")
-    .required("Confirm your password")
-    .oneOf([Yup.ref("password")], "Password does not match")})
+    })
 
-export default withStyles(styles)(InputForm);
+export default withStyles(styles)(ProtocolExpositionAndResponsePrevention);
